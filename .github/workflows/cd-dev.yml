@@ -33,13 +33,13 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
           name: build-artifact
-
-      - name: Checkout
-        uses: actions/checkout@v4
 
       - name: Release Dev Build
         env:

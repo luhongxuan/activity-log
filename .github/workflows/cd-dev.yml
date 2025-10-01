@@ -21,7 +21,11 @@ jobs:
         with:
           name: build-artifact
           path: build.zip
-
+    
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+            bun-version: latest
   deploy-dev:
     needs: build
     runs-on: ubuntu-latest

@@ -40,6 +40,7 @@ jobs:
           TAG: ${{ vars.BUILD_TAG }}
           NOTE: ${{ vars.RELEASE_NOTE }}
         run: |
+          gh release delete "$TAG" -y || true
           gh release create "$TAG" build.zip --notes "$NOTE"
 
   deploy-production:

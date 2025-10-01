@@ -74,3 +74,4 @@ jobs:
         run: |
           gh release delete "$TAG" -y || true
           gh release create "$TAG" build.zip --notes "$NOTE"
+
